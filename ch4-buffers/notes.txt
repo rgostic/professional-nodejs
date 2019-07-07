@@ -1,0 +1,2 @@
+- the core buffer class is allocated outside of javascript VM heap, it sites here without changing and GC does not touch it
+- assigning outside of bounds does not throw an exception

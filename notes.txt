@@ -1,0 +1,6 @@
+general
+-------
+
+ch3
+- core modules are loaded even if a third party module exists with the same name
+- modules are cached when they are loaded, so any initialization only happens once

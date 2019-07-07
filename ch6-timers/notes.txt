@@ -1,0 +1,1 @@
+- The process object is one of the few Node.js global objects

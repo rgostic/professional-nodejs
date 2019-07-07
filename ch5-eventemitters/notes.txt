@@ -1,0 +1,1 @@
+- always listen for errors from emitters as they will halt execution if not handled
