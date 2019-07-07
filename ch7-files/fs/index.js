@@ -1,4 +1,9 @@
-var write = require('./write-notes');
-var read = require ('./read-notes');
+var writeNotes = require('./write-notes');
+var readNotes = require('./read-notes');
+var path = require('path');
 
-console.log('read: ' + read + ' write: ' + write);
+readNotes(path.join(__dirname + '/../notes.txt'))
+  .then(function(notes) {
+    console.log(notes.length);
+    writeNotes(notes);
+  });
