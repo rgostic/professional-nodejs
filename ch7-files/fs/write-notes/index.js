@@ -5,7 +5,7 @@ function writeToMasterNotes(content) {
     if (err) { throw err; }
 
 
-    console.log(typeof content);
+    console.log(content);
     var writeBuffer = new Buffer(content);
     var bufferPosition = 0;
     var bufferLength = writeBuffer.length;
