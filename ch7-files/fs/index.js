@@ -1,16 +1,25 @@
 var writeNotes = require('./write-notes');
 var readNotes = require('./read-notes');
+var noteLocator = require('./note-locator');
 var path = require('path');
 
 let startChapter = 3;
-let paths = [ path.join(__dirname + '/../../notes.txt'),
-  path.join(__dirname + '/../../ch4-buffers/notes.txt'),
-  path.join(__dirname + '/../../ch5-eventemitters/notes.txt'),
-  path.join(__dirname + '/../../ch6-timers/notes.txt'),
-  path.join(__dirname + '/../../ch7-files/notes.txt') ];
+
+let paths = noteLocator();
+
+function parsePaths(noteLocation) {
+  var dir = noteLocation.dir;
+
+  return dir + noteLocation.filename;
+}
+
+function sortPaths(noteLocation) {
+
+}
+
 
 Promise
-  .all(paths.map(readNotes))
+  .all(paths.map(parsePaths).map(readNotes))
   .then(function(notes) {    
     writeNotes(notes.map(function (note, i) {
       if (i == 0) {
