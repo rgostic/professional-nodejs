@@ -14,7 +14,7 @@ var walkSync = function(dir, filelist) {
     }
     else {      
       if (file === 'notes.txt') {
-        filelist.push({"dir": dir, "filename": file});
+        filelist.push(dir);
       }
     }
   });
