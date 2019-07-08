@@ -11,7 +11,12 @@ function parsePaths(noteLocation) {
   return noteLocation + 'notes.txt';
 }
 
-
+function getChapter(path) {
+  var dashIndex = path.indexOf('-');
+  var chapter = parseInt(path.slice(2,dashIndex));
+  console.log('dir: ' + path + ' has chapter: ' + chapter);
+  return chapter;
+}
 
 function sortPaths(d1, d2) {
   var sort1 = 0;
@@ -22,14 +27,14 @@ function sortPaths(d1, d2) {
     sort1 = 0;  
   }
   else {
-    sort1 = parseInt(dir1.slice(2,3));
+    sort1 = getChapter(dir1);
   }
   var sort2 = 0;
   if (dir2.indexOf('ch') != 0) {
     sort2 = 0;  
   }
   else {
-    sort2 = parseInt(dir2[3]);
+    sort2 = getChapter(dir2);
   }
 
   var dirName = path.basename(dir1);
