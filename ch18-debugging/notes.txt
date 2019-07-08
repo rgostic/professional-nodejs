@@ -1,0 +1,1 @@
+- console.log uses util.format in node

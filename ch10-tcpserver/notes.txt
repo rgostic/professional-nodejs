@@ -1,1 +1,1 @@
-notes.txt
+- net.createServer's callback is called every time a 'connection' event is emitted
