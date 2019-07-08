@@ -1,0 +1,2 @@
+- spawning a child process allows you to interact with it through input/output streams, and even kill it via signals
+
